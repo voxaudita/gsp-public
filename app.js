@@ -1,5 +1,5 @@
 require('apostrophe')({
-  shortName: 'a3-boilerplate',
+  shortName: 'gsp2023',
   modules: {
     // Apostrophe module configuration
     // *******************************
