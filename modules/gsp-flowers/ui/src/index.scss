@@ -1,0 +1,34 @@
+@import '../../../asset/ui/src/scss/_variables';
+@import '../../../asset/ui/src/scss/_mixins';
+
+[data-flowers] {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  z-index: 2;
+  &.np {
+    display: none;
+  }
+  &[data-constraint-w="1"] {
+    justify-content: flex-start;
+  }
+    svg {
+      position: fixed;
+      bottom: 0;
+      overflow: visible;
+    }
+    .flower {
+      //filter: drop-shadow(2px 4px 5px rgba(var(--black), .1));
+      filter: drop-shadow(0px -4px 2px rgba(var(--black), .2));
+    }
+}
+
+@media only screen and (min-width: $screen-width-a) {
+  [data-flowers] {
+    &.np {
+      display: flex;
+    }
+  }
+}

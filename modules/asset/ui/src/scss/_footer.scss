@@ -1,0 +1,25 @@
+footer.gsp-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 6;
+  .panel {
+    box-sizing: border-box;
+    grid-column: 1/span 24;
+    padding: 16px 32px;
+    z-index: 2;
+    .copyright {
+      position: relative;
+      opacity: 0;
+      left: -50px;
+      //filter: blur(50px);
+      transition: all .5s ease-in-out;
+      &.visible {
+        opacity: 1;
+        left: 0;
+        //filter: blur(0px);
+      }
+    }
+  }
+}

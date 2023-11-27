@@ -1,0 +1,8 @@
+<div data-all-collections>
+  <div class="thumbnails">
+    {% for collection in data.collections %}
+      {% component 'gsp-collections:collectionList' with { direction: collection.direction }%}
+    {% endfor %}
+  </div>
+  <div class="full-display">{% component 'gsp-collections:artwork' %}</div>
+</div>

@@ -1,0 +1,66 @@
+@import '../../../asset/ui/src/scss/_variables';
+@import '../../../asset/ui/src/scss/_mixins';
+
+[data-gsp-shows] {
+  --numcards: 4,
+  --cardheight: 40vw;
+  --card-margin: 4vw;
+  --card-top-offset: 1em;
+  --outline-width: 0px;
+
+  padding: space(0, 4);
+  //text-align: center;
+  h2 {
+    text-align: left;
+    padding-top: space(8);
+  }
+  ul {
+    list-style: none;
+    display: block;
+  }
+  .upcoming-shows {
+    width: 100%;
+    ul {
+      //grid-template-columns: 1fr;
+      //grid-template-rows: repeat(var(--numcards), --cardheight);
+      //gap: var(--card-margin);
+      #card_1 {
+        --index: 1;
+      }
+      #card_2 {
+        --index: 2;
+      }
+      #card_3 {
+        --index: 3;
+      }
+      #card_4 {
+        --index: 4;
+      }
+      .card {
+        --index0: calc(var(--index) - 1);
+        --reverse-index: calc(var(--numcards) - var(--index0));
+        --reverse-index0: calc(var(--reverse-index) - 1);
+        position: sticky;
+        top: 0;
+        padding-top: space(4);
+        .card-content {
+          box-shadow: 0 0.2em 1em rgba(0, 0, 0, 0.1), 0 1em 2em rgba(0, 0, 0, 0.1);
+          background: rgb(255, 255, 255);
+          color: rgb(10, 5, 7);
+          border-radius: 1em;
+          overflow: hidden;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: stretch;
+          figure {
+            width: 100%;
+            img {
+                width: 100%;
+                display: block;
+            }
+          }
+        }
+      }
+    }
+  }
+}

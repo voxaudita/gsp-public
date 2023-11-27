@@ -10,15 +10,12 @@
 {% endblock %}
 
 {% block beforeMain %}
-<div class="bp-wrapper">
-  <header class="bp-header">
-    <img class="bp-header__logo" src="/images/logo.png" alt="ApostropheCMS logo">
-    <nav class="bp-nav"></nav>
-    {% if not data.user %}
-      <a class="bp-button bp-header__login" href="/login">Login</a>
-    {% endif %}
-  </header>
-  <main class="bp-main">
+<div class="gsp-page">
+  {% component 'gsp-header:gspHeader' %}
+  
+  {% component 'gsp-cityscape:gspCityBackdrop' %}
+  
+  <!-- <main class="main"> -->
 {% endblock %}
 
 {% block main %}
@@ -30,15 +27,25 @@
 {% endblock %}
 
 {% block afterMain %}
-  </main>
-  <footer class="bp-footer">
-    <h3>Essential Links</h3>
-    <ul class="bp-footer__links">
-      <li><a href="https://apostrophecms.com/" target="_blank">About ApostropheCMS</a></li>
-      <li><a href="https://chat.apostrophecms.com/" target="_blank">Discord</a></li>
-      <li><a href="https://twitter.com/apostrophecms" target="_blank">Twitter</a></li>
-      <li><a href="https://github.com/apostrophecms/apostrophe/discussions" target="_blank">GitHub Discussions</a></li>
-    </ul>
-  </footer>
-</div>{# Close .bp-wrapper #}
+  <!-- </main> -->
+  {% component 'gsp-cityscape:gspCityClouds' %}
+  <div data-gsp-city data-gsp-city-active="false">
+    <div data-gspcity-bridge data-bridge="left" class="city-layer bottom"></div>
+    <div data-gspcity-bridge data-bridge="right" class="city-layer bottom"></div>
+    {% component 'gsp-cityscape:gspCityBuildings' %}
+    <div data-gspcity-statue data-opacity="0" class="city-layer"></div>
+    {% component 'gsp-cityscape:gspCityFront' %}
+    <div data-gspcity-trees class="city-layer"></div>
+    
+    <!--
+    <div data-gspcity-bridges class="city-layer bottom"></div>
+    <div data-gspcity-buildings class="city-layer bottom"></div>
+    <div data-gspcity-statue class="city-layer bottom"></div>
+    <div data-gspcity-5 class="city-layer"></div>
+    
+    -->
+  </div>
+<div data-flowers="2" data-start="left" data-container="window" data-width-multiplier=".5" data-height-multiplier=".1" data-constraint-w=".6" data-constraint-h=".2" data-visibility="*">{% component 'gsp-flowers:gspFlowers' %}</div>
+{% component 'gsp-footer:gspFooter' %}
+</div>
 {% endblock %}

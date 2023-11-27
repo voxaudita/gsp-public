@@ -40,7 +40,12 @@
   "author": "Apostrophe Technologies, Inc.",
   "license": "MIT",
   "dependencies": {
+    "@svgdotjs/svg.js": "^3.2.0",
+    "animejs": "^3.2.1",
     "apostrophe": "^3.53.0",
+    "color.js": "^1.2.0",
+    "extract-colors": "^4.0.2",
+    "luxon": "^3.4.4",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {

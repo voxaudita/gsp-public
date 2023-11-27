@@ -1,0 +1,106 @@
+$screen-width-a: 500px;
+$screen-width-b: 1024px;
+$screen-width-c: 1280px;
+$base-px: 8px;
+
+:root {
+  // colors
+  --black: 0, 0, 0;
+  --white: 255, 255, 255;
+  --offblack: 5,4,2;
+  --offwhite: 248,240,244;
+  --darkred: 130,3,12;
+  --lightred: 176,38,51;
+  --flower-blue: 118,203,241;
+  --flower-pink: 239,63,156;
+  --flower-yellow: 244,218,9;
+  --flower-lavender: 166,157,196;
+  --flower-aqua: 116,239, 217;
+  --flower-orange: 242,77,16;
+
+  --midnight-blue: 29,45,68;
+  --alice-blue: 244,250,255; 
+  --platinum: 222,231,231;
+  --thistle: 183,173,207;
+  --zomp: 98,150,119;
+  --photo-blue: 152,223,234;
+  --sea-green: 7,190,184;
+  --flax: 227,217,133;
+
+  --link-color-light: 
+  --link-color-dark: 
+
+  // colors from paintings
+  --orange: 198, 97, 33;
+  --pink: 245, 209, 215;
+  --light-blue: 173, 212, 239;
+  --red: 173, 33, 48;
+  --yellow: 232, 184, 44;
+  --dark: 12, 14, 15;
+  --grey: 79, 79, 77;
+
+  --color-1: 114,152,180;
+
+  // rotations
+  --rotation: 0deg;
+
+  // fonts
+  --forum: 'Forum';
+  --playfair: 'Playfair';
+  --playfairDisplaySC: 'PlayfairDisplaySC';
+  --poppins: 'Poppins';
+  --cinzel: 'Cinzel';
+  --quicksand: 'Quicksand';
+  --nanumGothic: 'NanumGothic';
+  --questrial: 'Questrial';
+  --arsenal: 'Arsenal';
+  --gruppo: 'Gruppo';
+
+
+  // typography
+  --base-font-size: 18px;
+  --base-line-height: 1.5rem;
+  --primary-font: var(--questrial);
+  --gsp-logo-font: var(--playfair);
+  --link-color: var(--dark);
+  --link-font: var(--questrial);
+
+  // spacing vars
+  --base-px: #{$base-px};
+  --spacing: #{$base-px};
+  --columns: 6;
+  --column-gap: #{$base-px};
+  --row-gap: #{$base-px};
+}
+
+
+
+/**
+  * Responsive adjustments
+  */
+@media only screen and (min-width: 768px) {
+  :root {
+    --spacing: #{space(2)};
+    --columns: 12;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  :root {
+    --spacing: #{space(4)};
+  }
+}
+@media only screen and (min-width: 1280px) {
+  :root {
+    --spacing: #{space(4)};
+  }
+}
+
+
+
+/**
+ * Touch device adjustments
+*/
+@media (hover: none) {
+}
+
+

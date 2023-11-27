@@ -1,0 +1,215 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  //overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  background: rgba(var(--white),1);
+  //background-size: 600% 100%;
+  //background: linear-gradient(90deg, #ff7e00, #ffffff, #5cff00);
+  //background: linear-gradient(90deg, rgba(var(--offwhite),1) 0%, rgba(var(--white),1) 35%, rgba(var(--offwhite),1) 100%);
+  //animation: linear bg-color forwards;
+  //animation-timeline: scroll(root block);
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  [data-section-bg="city"] {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(45deg, rgba(115,142,180,1), rgba(122,163,193, 1), rgba(180,203,220,1));
+  }
+
+  &[data-gspscroller="on"] {
+    height: 100vh;
+    overflow: hidden;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+
+[data-noscroll] {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+}
+
+[data-paper-scene] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  //mask: url(/images/svg/2asset1cutout.svg);
+  //mask-position: 90% 90%;
+  //mask-repeat: no-repeat;
+  //mask-size: 50%;
+  //-webkit-clip-path: url(#svgPath);
+  //clip-path: url(#svgPath);
+}
+
+.gmargin {
+  margin: var(--spacing);
+  box-sizing: border-box;
+}
+.gpadding {
+  padding: var(--spacing);
+  box-sizing: border-box;
+}
+
+.gsp-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--columns), 1fr);
+  column-gap: var(--spacing);
+  row-gap: var(--spacing);
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glass-panel {
+  background: rgba(var(--white), 0.9);
+  border-radius: 16px;
+  height: 100%;
+  //box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(5px);
+  //border: 1px solid rgba(var(--white), 0.803);
+  box-shadow: -7px -7px 20px 0px rgba(var(--black), .15),
+              -4px -4px 5px 0px rgba(var(--black), .15),
+              7px 7px 20px 0px rgba(var(--black), .133),
+              4px 4px 5px 0px rgba(var(--black), .06),
+              inset 0px 0px 0px 0px rgba(var(--white), .6),
+              inset 0px 0px 0px 0px rgba(var(--black), .06),
+              inset 0px 0px 0px 0px rgba(var(--white), .6),
+              inset 0px 0px 0px 0px rgba(var(--black), .06);
+}
+
+.center-stage {
+  position:absolute;
+  top: 14%;
+  left: 5%;
+  width: 90%;
+  height: 80%;
+}
+
+
+[data-testing] {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  svg {
+    position: absolute;
+  }
+}
+
+#header-test {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  path {
+    opacity: 1;
+    filter: drop-shadow(1px 1px 1px rgba(var(--black), .05));
+    &.scale-10 {
+      filter: drop-shadow(1px 1px 2px rgba(var(--black), .25));
+    }
+  }
+}
+
+.flowers {
+  position: absolute;
+  display: block;
+  bottom: 0;
+  left: 20px;
+  width: 200px;
+  height: 200px;
+  svg#flower {
+    path, rect {
+      filter: drop-shadow(1px 1px 2px rgba(var(--black), .25));
+    }
+  }
+}
+
+.box {
+  position: absolute;
+  right: 100px;
+  bottom:100px;
+  width: 700px;
+  height: 700px;
+  svg {
+    height: 100%;
+  margin: auto;
+  text-align: center;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  .shadow {
+    //box-shadow: 10px 10px 20px 0px rgba(var(--black), .25);
+    //-webkit-filter: drop-shadow( 10px 10px 10px rgba(0, 0, 0, .7));
+    //filter: drop-shadow( 10px 10px 10px rgba(0, 0, 0, .7));
+  }
+}
+
+.bg1 {
+  fill: rgba(var(--offwhite), .5);
+}
+.bg2 {
+  fill: rgba(var(--zomp), .25);
+}
+.bg3 {
+  fill: rgba(var(--sea-green), .5);
+}
+.bg4 {
+  fill: rgba(var(--flax), .5);
+}
+
+
+.placeholder {
+  display: block;
+  width: 2vw;
+  height: 500vh;
+  background: rgb(2,0,36);
+  background: linear-gradient(0deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+.np {
+  display: none;
+}
+
+@media only screen and (min-width > $screen-width-a) {
+  *.np {
+    display: inherit;
+  }
+}
+
+
+@media only screen and (min-width: $screen-width-b) {
+  body {
+    //background: linear-gradient(90deg, rgba(42, 111, 151,.5) 0%, rgba(70, 143, 175,.5) 35%, rgba(202,240,248,.5) 100%);
+  }
+}

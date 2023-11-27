@@ -24,7 +24,8 @@ a {
 }
 
 ::selection {
-  background-color: $color-gold;
+  //background-color: $color-gold;
+  background-color: transparent;
 }
 
 code {

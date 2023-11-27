@@ -6,3 +6,18 @@
 @import './scss/_layout';
 @import './scss/_welcome';
 @import './scss/_widgets';
+
+@import './scss/_animations';
+@import './scss/_mixins';
+@import './scss/_variables';
+@import './scss/_typography';
+@import './scss/_core';
+@import './scss/_background';
+@import './scss/_foreground';
+@import './scss/_footer';
+@import './scss/_paper';
+
+* {
+  margin: 0;
+  padding: 0;
+}

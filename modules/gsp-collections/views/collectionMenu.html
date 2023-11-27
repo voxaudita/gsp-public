@@ -1,0 +1,37 @@
+{% set totalItems = data.collections | length %}
+{% set halfway = totalItems / 2 %}
+<div data-collection-menu data-total-collections="{{ data.collections | length }}" class="collection-menu">
+  <div class="cmenu">
+    <div class="collection-menu-container">
+      {% for item in data.collections %}
+      {% set pos = 'left' %}
+      {% if loop.index > halfway %}
+      {% set pos = 'right' %}
+      {% endif %}
+      <div data-collection-id="{{ loop.index }}" class="collection-menu-item {{ pos }}">
+        <div class="cover-image"><img src="{{ item.cover }}" title="{{ item.name }}"/></div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="collection-titles">
+    {% for item in data.collections %}
+    {% set pos = 'left' %}
+    {% if loop.index > halfway %}
+    {% set pos = 'right' %}
+    {% endif %}
+    <div data-collection-id="{{ loop.index }}" class="collection-title {{pos}}">
+      <h2>{{ item.name | safe}}<span class="highlight"></span></h2>
+    </div>
+    {% endfor %}
+    </div>
+  </div>
+  <div class="series-display">
+      {% for item in data.collections %}
+      <div data-collection-id="{{ loop.index }}" class="series-list">
+        <h3>{{ item.name | safe}}</h3>
+        {% component 'gsp-collections:collectionList' %}
+      </div>
+      {% endfor %}
+  </div>
+</div>
+<div data-opacity="0" class="collection-back-btn"><span></span></div>
